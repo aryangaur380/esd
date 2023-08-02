@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/Logo-Shop.png" type="image/x-icon" title="xandasdowdjw">
+    <title>ShopConnect | Landing page</title>
+    <!-- link for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            padding: 0 15px 15px;
+        }
+        .container nav{
+            width: 90%;
+            height: 80px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+     
+        nav ul li{
+            display: inline-block;
+            margin-left: 50px;
+            position: relative;
+            line-height: 80px;
+            cursor: pointer;
+        }
+        nav ul li::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #79bccf;
+            width: 0%;
+            height: 3px;
+            transition: 0.3s;
+        }
+        nav ul li:hover::after,
+        nav ul li.active::after{
+            width: 100%;
+        }
+
+        nav ul li a{
+            color: #444;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s ease-in-out;
+        }
+        nav ul li a:hover,
+        nav ul li.active a{
+            color: #79bccf;
+
+        }
+        .container .content{
+            width: 100%;
+            height: calc(100vh - 95px);
+            background: linear-gradient(130deg, #c4e1f8, #eeb0bd);
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+        }
+        .content .div-text span{
+            color: #fff;
+            font-size: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            font-weight: bold;
+        }
+        
+        .content .div-text h3{
+            font-size: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            font-weight: normal;
+            margin: 20px 0 8px;
+            color: #444;
+        }
+        
+        .content .div-text h1{
+            font-size: 55px;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #444;
+        }
+        .content .div-text p{
+            font-size: 14px;
+            line-height: 1.4;
+            letter-spacing: 1.3px;
+            margin-bottom: 55px;
+            color: #666;
+        }
+        .content .div-text .btn{
+            padding: 15px 35px;
+            background-color: #fff;
+            color: #79bccf;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s ease-in-out;
+        }
+        .content .div-text .btn:hover{
+            background-color:  #79bccf;
+            color: #fff;
+
+        }
+
+        .content .div-img img{
+            width: 350px;
+        }
+        .content .small-img{
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 80px;
+        }
+        .content .small-img img{
+            width: 80px;
+            cursor: pointer;
+            transition: 0.4s ease-in-out;
+        }
+        .content .small-img img:hover{
+            transform: scale(1.3);
+        }
+
+    </style>
+</head>
+<body>   
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <a href="landing.html"><img src="/img/Logoname.png" alt="ShopConnect" width="260px" height="65px"> </a>
+            </div>
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Sign in</a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <div class="div-text">
+                <span>outfit of the day</span>
+                <h3>all your</h3>
+                <h1>styles are here</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>
+                    Provident, necessitatibus eveniet? Commodi autem inventore <br>facilis perspiciatis</p>
+                    <a href="#" class="btn">buy now</a>
+            </div>
+            <div class="div-img">
+                <img id="big-img" src="/img/jacket1.png" alt="">
+            </div>
+            <div class="small-img">
+                <img onclick="myTshirt(this.src)" src="img/jacket1.png" alt="">
+                <img onclick="myTshirt(this.src)" src="img/jacket2.png" alt="">
+                <img onclick="myTshirt(this.src)" src="img/jacket3.png" alt="">
+            </div>
+        </div>
+    </div> 
+    <script>
+        let bigImage = document.getElementById('big-img')
+        function myTshirt(shirt){
+            bigImage.src=shirt
+        }
+    </script>
+</body>
+</html>
